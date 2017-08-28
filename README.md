@@ -51,13 +51,13 @@
 ##### Components
 * create the following component and structure it according to the diagram below:
 ```
-App
-  Provider
+Provider
+  App  
     BrowserRouter
       Route / Dashboard
-        CategoryForm -- for creating categorys
+        CategoryForm -- for creating categories
         [Category Item]
-           CategoryForm  -- for updating categorys
+           CategoryForm  -- for updating categories
 ```
 
 ###### App Component
