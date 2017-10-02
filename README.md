@@ -26,6 +26,11 @@
 * `src/style`
 * `src/style/main.scss`
 
+Your package.json must include scripts for:
+
+* `lint`
+* `test`
+
 #### Feature Tasks
 ##### Category
 * in this application, a category should contain *(at least)* the following properties
@@ -49,6 +54,8 @@
 * in `lib/store.js` export a function that will return a new redux store from your category reducer
 
 ##### Tests
+
+Using [Jest](https://facebook.github.io/jest/)…
 
 ###### Reducer
 * One test for initial state
