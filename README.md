@@ -48,6 +48,16 @@
 ###### store
 * in `lib/store.js` export a function that will return a new redux store from your category reducer
 
+##### Tests
+
+###### Reducer
+* One test for initial state
+* One test for unknown `action.type`
+* At least one test per known `action.type`
+
+###### Action Creators
+* At least one test per action creator
+
 ##### Components
 * create the following component and structure it according to the diagram below:
 ```
