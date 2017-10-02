@@ -1,4 +1,4 @@
-![cf](https://i.imgur.com/7v5ASc8.png) 26: React & Redux
+![DV](https://www.deltavcodeschool.com/wp-content/uploads/DeltaV.png) 26: React & Redux
 ======
 
 ## Submission Instructions
@@ -36,7 +36,7 @@
 
 ##### Redux
 ###### reducer
-* create a category reducer in your your reducer directory
+* create a category reducer in your reducer directory
 * this reducer should support the following interactions
   * `CATEGORY_CREATE`
   * `CATEGORY_UPDATE`
@@ -81,3 +81,6 @@ Provider
   * `onClick` the category should be removed from the application state
 * should display a `CategoryForm`
   * `onComplete` the form should update the component in the application state
+
+#### Wireframe
+![expense-tracker](expense-tracker.png)
