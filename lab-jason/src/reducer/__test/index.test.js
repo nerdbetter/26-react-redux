@@ -1,8 +1,9 @@
-import reducer from './';
+import reducer from '../';
 import deepFreeze from 'deep-freeze';
 
 const defaultState ={
   categories: [],
+  cards: [],
 };
 
 test('initial state should have all reducers', () =>{
