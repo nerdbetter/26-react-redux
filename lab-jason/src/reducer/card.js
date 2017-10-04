@@ -6,20 +6,22 @@ export default (state = {}, action = {}) => {
       ...state,
       [payload.id]: [],
     };
-  case 'CATEGORY_REMOVE':
-    var nextState = {...state};
+  case 'CATEGORY_REMOVE':{
+    let nextState = {...state};
     delete nextState[payload.id];
     return nextState;
-  case 'EXPENSE_CREATE':
-    var { categoryID } = payload;
-    var categoryExpense = state[categoryID];
+  }
+  case 'CARD_CREATE':{
+    let { categoryID } = payload;
+    let categoryCard = state[categoryID];
     return {
       ...state,
       [categoryID]: [
-        ...categoryExpense,
+        ...categoryCard,
         payload,
       ],
     };
+  }
   default:
     return state;
   }

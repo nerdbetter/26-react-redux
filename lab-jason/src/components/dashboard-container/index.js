@@ -3,11 +3,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/category-actions.js';
 
-import CategoryForm from '../category-form/index';
+import CategoryForm from '../category-form';
+import CategoryItem from '../category-item';
 
 class DashboardContainer extends React.Component {
   componentDidMount() {
-    this.props.categoryCreate({ title: 'From mapDispatchToProps' });
+    this.props.categoryCreate({ title: 'New Category' });
   }
 
   render() {
@@ -17,10 +18,8 @@ class DashboardContainer extends React.Component {
         <CategoryForm
           buttonText="Add Category"
           saveCategory={this.props.categoryCreate} />
-        {this.props.categories.map(cat =>
-          <div key={cat.id}>
-            <h3>{cat.title}</h3>
-          </div>
+        {this.props.categories.map(category =>
+          <CategoryItem key={category.id} category={category} />
         )}
       </main>
     );

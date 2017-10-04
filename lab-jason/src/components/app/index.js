@@ -13,10 +13,6 @@ export default class App extends React.Component {
     store.subscribe(() => {
       console.log('__STATE__', store.getState());
     });
-
-    setTimeout(() => {
-      store.dispatch({ type: 'CATEGORY_CREATE', payload: { id: 1, title: 'Test' }});
-    }, 2000);
   }
 
   render() {
