@@ -1,4 +1,6 @@
-export default (state = {}, action = {}) => {
+const initialState = [];
+
+export default (state = initialState, action = {}) => {
   const { type, payload } = action;
   switch (type) {
   case 'CATEGORY_CREATE':
@@ -21,6 +23,14 @@ export default (state = {}, action = {}) => {
         payload,
       ],
     };
+  }
+  case 'CARD_UPDATE':{
+    return state.map(card =>
+      card.id === payload.id ? payload : card);
+  }
+  case 'CARD_REMOVE':{
+    return state.map(card =>
+      card.id !== payload.id);
   }
   default:
     return state;

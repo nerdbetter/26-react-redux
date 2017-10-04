@@ -3,8 +3,12 @@ import { connect } from 'react-redux';
 
 import CategoryForm from '../category-form';
 import * as actions from '../../actions/category-actions';
+import CardForm from '../card-form';
+import CardItem from '../card-item';
+import { cardCreate } from '../../actions/card-actions';
 
-const CategoryItem = ({ category, categoryUpdate, categoryDelete }) => (
+
+const CategoryItem = ({ category, categoryUpdate, categoryDelete, cards }) => (
   <section className='category-item'>
     <div>
       <div className='content'>
@@ -17,6 +21,18 @@ const CategoryItem = ({ category, categoryUpdate, categoryDelete }) => (
           category={category}
           saveCategory={categoryUpdate} />
       </div>
+      <div className='card-container'>
+        <CardForm
+          buttonText='Create Card'
+          onSave={cardCreate}
+          categoryID={category.id}
+        />
+        <ul className='card-items'>
+          {cards.map(card =>
+            <CardItem key={card.id} card={card} />)}
+        </ul>
+      </div>
+
     </div>
   </section>
 );
@@ -28,6 +44,7 @@ let mapStateToProps = (state, props) => ({
 let mapDispatchToProps = (dispatch) => ({
   categoryUpdate: category => dispatch(actions.categoryUpdate(category)),
   categoryDelete: category => dispatch(actions.categoryRemove(category)),
+  cardCreate: card => dispatch(cardCreate(card)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryItem);
